@@ -1,0 +1,7 @@
+streamlit
+pandas
+numpy
+TTS==0.22.0
+streamlit-audiorec
+ollama
+openai
