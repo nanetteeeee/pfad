@@ -10,4 +10,7 @@ if prompt := st.chat_input():
 
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    
+
+response = "good morning"
+st.session_state.messages.append({"role": "user", "content": response})
+st.chat_message("assistant").write(response)

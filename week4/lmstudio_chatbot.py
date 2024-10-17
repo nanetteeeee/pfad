@@ -16,10 +16,14 @@ if prompt := st.chat_input():
 
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
+    messages = [{"role": "system", "content": "Always answer in rhymes."}]
+
+    messages.extend(st.session_state.messages)
+    print(messages)
     
     response = client.chat.completions.create(
         model="lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF",
-        messages=st.session_state.messages,
+        messages=messages,
         stream=True,
     )
 
